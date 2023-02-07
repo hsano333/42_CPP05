@@ -1,11 +1,15 @@
 #include "Bureaucrat.hpp"
-//#include "GradeTooHighException.hpp"
-//#include "GradeTooLowException.hpp"
+#include <iostream>
 
 using std::string;
 using std::endl;
+using std::cout;
 
-Bureaucrat::Bureaucrat() : name(""), grade(150) \
+
+TooLowException Bureaucrat::GradeTooLowException = TooLowException();
+TooHighException Bureaucrat::GradeTooHighException = TooHighException();
+
+Bureaucrat::Bureaucrat() : name(""), grade(150)
 {
 }
 
@@ -66,12 +70,12 @@ void Bureaucrat::decrementGrade(void)
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& bure)
 {
-    os << bure.getName() << ", bureaucrat grade " << bure.getGrade() << "." << endl;
+    os << bure.getName() << ", bureaucrat grade " << bure.getGrade() << ".";
     return (os);
 }
 
 std::ostream& operator<<(std::ostream& os, Bureaucrat& bure)
 {
-    os << bure.getName() << ", bureaucrat grade " << bure.getGrade() << "." << endl;
+    os << bure.getName() << ", bureaucrat grade " << bure.getGrade() << ".";
     return (os);
 }

@@ -2,13 +2,11 @@
 #define GRADETOOHIGHEXCEPTION_H
 #include <exception>
 
-class HighException : public std::exception
+class TooHighException : public std::exception
 {
     public:
-    private:
-        HighException(){};
-        //~HighException(){};
+        TooHighException();
+        ~TooHighException() throw();
+        const char* what() const throw();
 };
-
-
 #endif

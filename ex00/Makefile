@@ -2,7 +2,7 @@ NAME	:= Mommy_when_I_grow_up_I_want_to_be_a_bureaucrat
 LIB	:= ./lib/
 OBJDIR	:= ./obj
 SRCDIR	:= ./srcs/
-SRC	:= Bureaucrat.cpp main.cpp
+SRC	:= Bureaucrat.cpp main.cpp GradeTooHighException.cpp GradeTooLowException.cpp
 ENTRY	:= 
 
 INCS	:= ./include

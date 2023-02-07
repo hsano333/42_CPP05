@@ -1,12 +1,12 @@
 #ifndef GRADETOOLOWEXCEPTION_H
 #define GRADETOOLOWEXCEPTION_H
-#include "GradeException.hpp"
+#include <exception>
 
-class LowException : public std::exception
+class TooLowException : public std::exception
 {
     public:
-    private:
-        LowException(){};
-        //~LowException(){};
+        TooLowException();
+        ~TooLowException() throw();
+        const char* what() const throw();
 };
 #endif

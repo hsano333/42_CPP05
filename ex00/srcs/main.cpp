@@ -9,27 +9,32 @@ int main(void)
     Bureaucrat bure;
     try
     {
-        bure = Bureaucrat("test0", 0);
+        cout << "test1" << endl;
+        bure = Bureaucrat("grade0", 0);
     }
     catch(std::exception & e)
     {
         cout << e.what() << endl;
     }
+
     try
     {
-        bure = Bureaucrat("test151", 151);
+        cout << endl << "test2" << endl;
+        bure = Bureaucrat("grade151", 151);
     }
     catch(std::exception & e)
     {
         cout << e.what() << endl;
     }
+
     try
     {
-        bure = Bureaucrat("test149", 149);
-        cout << "name:" << bure.getName() << " grade:" << bure.getGrade() << endl;
+        cout << endl << "test3" << endl;
+        bure = Bureaucrat("grade149", 149);
+        cout << bure << endl;
         cout << "down grade" << endl;
         bure.decrementGrade();
-        cout << "name:" << bure.getName() << " grade:" << bure.getGrade() << endl;
+        cout << bure << endl;
         cout << "down grade" << endl;
         bure.decrementGrade();
     }
@@ -39,11 +44,12 @@ int main(void)
     }
     try
     {
-        bure = Bureaucrat("test2", 2);
-        cout << "name:" << bure.getName() << " grade:" << bure.getGrade() << endl;
+        cout << endl << "test4" << endl;
+        bure = Bureaucrat("grade2", 2);
+        cout << bure << endl;
         cout << "up grade" << endl;
         bure.incrementGrade();
-        cout << "name:" << bure.getName() << " grade:" << bure.getGrade() << endl;
+        cout << bure << endl;
         cout << "up grade" << endl;
         bure.incrementGrade();
     }

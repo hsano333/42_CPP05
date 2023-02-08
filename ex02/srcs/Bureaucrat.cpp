@@ -1,5 +1,6 @@
 #include "Bureaucrat.hpp"
 #include <iostream>
+#include <iostream>
 
 using std::string;
 using std::endl;
@@ -79,12 +80,11 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& bure)
     return (os);
 }
 
-
 void Bureaucrat::signForm(AForm &form)
 {
     try
     {
-        form.execute(*this);
+        form.beSigned(*this);
         cout << this->getName() << " signed " << form.getName() << endl;
     }
     catch(std::exception &e)
@@ -94,4 +94,26 @@ void Bureaucrat::signForm(AForm &form)
              << " but your grade is " << this->getGrade() 
              << "." << endl;
     }
+}
+
+void Bureaucrat::executeForm(AForm const &form) const
+{
+    try
+    {
+        form.execute(*this);
+        cout << this->getName() << " executed "<< form.getName() << endl;
+    }
+    catch(std::exception &e)
+    {
+        cout << this->getName() << " couldn't execute " << form.getName() << " because "
+             << e.what()
+             << "." << endl;
+    }
+    //catch(TooLowException &e)
+    //{
+        //cout << this->getName() << " couldn't execute " << form.getName() << " because "
+             //<< "Form's grade for sign is " << form.getGradeForSign()
+             //<< " but your grade is " << this->getGrade() 
+             //<< "." << endl;
+    //}
 }

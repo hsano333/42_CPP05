@@ -84,16 +84,16 @@ void Bureaucrat::signForm(Form &form)
 {
     try
     {
+        cout << "signForm:" << form.getSign() << endl;
         form.beSigned(*this);
         cout << this->getName() << " signed " << form.getName() << endl;
     }
     catch(std::exception &e)
     {
-        cout << this->getName() << " couldn’t sign " << form.getName() << " because "
+        cout << e.what() << endl;
+        cout << this->getName() << " couldn't sign " << form.getName() << " because "
              << "Form's grade for sign is " << form.getGradeForSign()
              << " but your grade is " << this->getGrade() 
              << "." << endl;
     }
-
-
 }

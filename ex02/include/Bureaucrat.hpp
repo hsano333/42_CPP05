@@ -5,6 +5,7 @@
 #include <ostream>
 #include "GradeTooHighException.hpp"
 #include "GradeTooLowException.hpp"
+#include "NotSignedException.hpp"
 #include "AForm.hpp"
 //
 class AForm;
@@ -27,7 +28,7 @@ class Bureaucrat
         void incrementGrade();
         void decrementGrade();
         void signForm(AForm &form);
-        void executeForm(AForm const & form);
+        void executeForm(AForm const & form) const;
 };
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& f);
 std::ostream& operator<<(std::ostream& os, Bureaucrat& f);

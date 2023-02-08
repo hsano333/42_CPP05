@@ -5,6 +5,7 @@ using std::endl;
 
 TooLowException AForm::GradeTooLowException = TooLowException();
 TooHighException AForm::GradeTooHighException = TooHighException();
+NotSignedException AForm::NotSignException = NotSignedException();
 
 AForm::AForm(std::string name, int gradeForSign, int gradeForExecute) : name(name)
                                                                       , gradeForSign(gradeForSign)

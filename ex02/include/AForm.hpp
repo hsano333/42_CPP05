@@ -3,6 +3,7 @@
 
 #include "GradeTooHighException.hpp"
 #include "GradeTooLowException.hpp"
+#include "NotSignedException.hpp"
 #include "Bureaucrat.hpp"
 #include <string>
 #include <iostream>
@@ -29,10 +30,11 @@ class AForm
         virtual int getGradeForExecute() const;
         virtual bool getSign() const;
         virtual void beSigned(Bureaucrat& bure);
-        virtual void execute(Bureaucrat const & executor) = 0;
+        virtual void execute(Bureaucrat const & executor) const = 0;
 
         static TooHighException GradeTooHighException;
         static TooLowException GradeTooLowException;
+        static NotSignedException NotSignException;
 };
 
 std::ostream& operator<<(std::ostream& os, const AForm& form);

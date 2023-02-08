@@ -5,13 +5,13 @@
 #include <ostream>
 #include "GradeTooHighException.hpp"
 #include "GradeTooLowException.hpp"
-
-
+#include "Form.hpp"
+//
+class Form;
 
 class Bureaucrat
 {
     private:
-        const static int test = 0;
         const std::string name;
         int grade;
     public:
@@ -26,6 +26,7 @@ class Bureaucrat
         int getGrade() const;
         void incrementGrade();
         void decrementGrade();
+        void signForm(Form &form);
 };
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& f);
 std::ostream& operator<<(std::ostream& os, Bureaucrat& f);

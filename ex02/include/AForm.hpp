@@ -23,7 +23,7 @@ class AForm
         AForm();
         virtual ~AForm();
         AForm(const AForm & form);
-        void operator=(const AForm& form);
+        AForm& operator=(const AForm& form);
 
         virtual std::string getName() const;
         virtual int getGradeForSign() const;

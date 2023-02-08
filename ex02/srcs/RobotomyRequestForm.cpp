@@ -24,12 +24,13 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& form) : AFor
 {
     this->target = form.target;
 }
-void RobotomyRequestForm::operator=(const RobotomyRequestForm& form)
+RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& form)
 {
     this->target = form.target;
     Bureaucrat bure = Bureaucrat("tmp", 1);
     if (form.getSign())
         this->beSigned(bure);
+    return (*this);
 }
 
 void RobotomyRequestForm::robotomize(void) const

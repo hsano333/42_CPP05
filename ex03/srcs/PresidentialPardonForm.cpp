@@ -25,12 +25,13 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& for
     this->target = form.target;
 }
 
-void PresidentialPardonForm::operator=(const PresidentialPardonForm& form)
+PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& form)
 {
     this->target = form.target;
     Bureaucrat bure = Bureaucrat("tmp", 1);
     if (form.getSign())
         this->beSigned(bure);
+    return (*this);
 }
 
 void PresidentialPardonForm::pardone(void) const

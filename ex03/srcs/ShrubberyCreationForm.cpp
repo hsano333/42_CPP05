@@ -22,12 +22,13 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& form) 
 {
     this->target = form.target;
 }
-void ShrubberyCreationForm::operator=(const ShrubberyCreationForm& form)
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& form)
 {
     this->target = form.target;
     Bureaucrat bure = Bureaucrat("tmp", 1);
     if (form.getSign())
         this->beSigned(bure);
+    return (*this);
 }
 
 void ShrubberyCreationForm::writeAsciiTrees(void) const

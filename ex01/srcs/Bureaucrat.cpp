@@ -35,10 +35,11 @@ Bureaucrat::Bureaucrat(const Bureaucrat& bure) : name(bure.name)
     this->grade = bure.grade;
 }
 
-void Bureaucrat::operator=(const Bureaucrat& bure)
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat& bure)
 {
     const_cast<string&>(this->name) = bure.name;
     this->grade = bure.grade;
+    return (*this);
 }
 
 std::string Bureaucrat::getName(void) const

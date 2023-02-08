@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: hsano <hsano@student.42tokyo.jp>           +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 03:53:41 by hsano             #+#    #+#             */
-/*   Updated: 2023/02/09 04:11:53 by sano             ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "RobotomyRequestForm.hpp"
 #include <iostream>
 #include <fstream>
@@ -36,12 +24,13 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& form) : AFor
 {
     this->target = form.target;
 }
-void RobotomyRequestForm::operator=(const RobotomyRequestForm& form)
+RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& form)
 {
     this->target = form.target;
     Bureaucrat bure = Bureaucrat("tmp", 1);
     if (form.getSign())
         this->beSigned(bure);
+    return (*this);
 }
 
 void RobotomyRequestForm::robotomize(void) const

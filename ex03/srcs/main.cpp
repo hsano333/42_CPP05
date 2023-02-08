@@ -4,67 +4,114 @@
 #include "PresidentialPardonForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
-#include "Intern.hpp"
 
 using std::cout;
 using std::endl;
 
 int main(void)
 {
-    Intern someRandomIntern;
-    AForm* rrf;
-    Bureaucrat bure1 = Bureaucrat("bure1", 1);
+    ShrubberyCreationForm form1 = ShrubberyCreationForm("form1");
+    RobotomyRequestForm form2 = RobotomyRequestForm("form2");
+    PresidentialPardonForm form3 = PresidentialPardonForm("form3");
 
-    try
-    {
-        cout << "test1" << endl;
-        rrf = someRandomIntern.makeForm("robotomy_request", "Bender");
-        bure1.signForm(*rrf);
-        bure1.executeForm(*rrf);
-        cout << *rrf << endl;
-        delete rrf;
+    Bureaucrat bure1 = Bureaucrat("bure1", 1);
+    Bureaucrat bure10 = Bureaucrat("bure10", 10);
+    Bureaucrat bure30 = Bureaucrat("bure30", 30);
+    Bureaucrat bure50 = Bureaucrat("bure50", 50);
+    Bureaucrat bure75 = Bureaucrat("bure75", 75);
+    Bureaucrat bure140 = Bureaucrat("bure140", 140);
+    Bureaucrat bure150 = Bureaucrat("bure150", 150);
+    cout << bure1 << endl;
+    cout << bure10 << endl;
+    cout << bure150 << endl;
+
+    try {
+        cout << endl <<  "test1" << endl;
+        bure150.signForm(form1);
+        bure150.executeForm(form1);
+        bure150.signForm(form2);
+        bure150.executeForm(form2);
+        bure150.signForm(form3);
+        bure150.executeForm(form3);
     }
-    catch (std::exception &e)
-    {
+    catch(std::exception & e) {
         cout << e.what() << endl;
     }
-    try
-    {
+    try {
         cout << endl <<  "test2" << endl;
-        rrf = someRandomIntern.makeForm("shrubbery_creation", "Shrub");
-        bure1.signForm(*rrf);
-        bure1.executeForm(*rrf);
-        cout << *rrf << endl;
-        delete rrf;
+        bure140.signForm(form1);
+        bure140.executeForm(form1);
+        bure140.signForm(form2);
+        bure140.executeForm(form2);
+        bure140.signForm(form3);
+        bure140.executeForm(form3);
     }
-    catch (std::exception &e)
-    {
+    catch(std::exception & e) {
         cout << e.what() << endl;
     }
-    try
-    {
+    try {
         cout << endl <<  "test3" << endl;
-        rrf = someRandomIntern.makeForm("presidentia_pardon", "President");
-        bure1.signForm(*rrf);
-        bure1.executeForm(*rrf);
-        cout << *rrf << endl;
-        delete rrf;
+        bure75.signForm(form1);
+        bure75.executeForm(form1);
+        bure75.signForm(form2);
+        bure75.executeForm(form2);
+        bure75.signForm(form3);
+        bure75.executeForm(form3);
     }
-    catch (std::exception &e)
-    {
+    catch(std::exception & e) {
         cout << e.what() << endl;
     }
-    try
-    {
+    try {
         cout << endl <<  "test4" << endl;
-        rrf = someRandomIntern.makeForm("test", "NG");
-        cout << *rrf << endl;
-        delete rrf;
+        bure50.signForm(form1);
+        bure50.executeForm(form1);
+        bure50.signForm(form2);
+        bure50.executeForm(form2);
+        bure50.signForm(form3);
+        bure50.executeForm(form3);
     }
-    catch (std::exception &e)
-    {
+    catch(std::exception & e) {
         cout << e.what() << endl;
     }
+    try {
+        cout << endl <<  "test4" << endl;
+        bure30.signForm(form1);
+        bure30.executeForm(form1);
+        bure30.signForm(form2);
+        bure30.executeForm(form2);
+        bure30.signForm(form3);
+        bure30.executeForm(form3);
+    }
+    catch(std::exception & e) {
+        cout << e.what() << endl;
+    }
+    try {
+        cout << endl <<  "test5" << endl;
+        bure10.signForm(form1);
+        bure10.executeForm(form1);
+        bure10.signForm(form2);
+        bure10.executeForm(form2);
+        bure10.signForm(form3);
+        bure10.executeForm(form3);
+    }
+    catch(std::exception & e) {
+        cout << e.what() << endl;
+    }
+
+    try {
+        cout << endl << "test6" << endl;
+        bure1.signForm(form1);
+        bure1.executeForm(form1);
+        bure1.signForm(form2);
+        bure1.executeForm(form2);
+        bure1.signForm(form3);
+        bure1.executeForm(form3);
+    }
+    catch(std::exception & e) {
+        cout << e.what() << endl;
+    }
+
+
 
     return (0);
 }

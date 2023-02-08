@@ -32,12 +32,13 @@ AForm::AForm(const AForm & form) : name(form.name)
 {
 }
 
-void AForm::operator=(const AForm &form)
+AForm& AForm::operator=(const AForm &form)
 {
     const_cast<string&>(this->name) = form.name;
     const_cast<int&>(this->gradeForSign) = form.gradeForSign;
     const_cast<int&>(this->gradeForExecute) = form.gradeForExecute;
     this->sign = form.sign;
+    return (*this);
 }
 
 std::string AForm::getName(void) const

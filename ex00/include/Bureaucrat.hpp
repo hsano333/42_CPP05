@@ -20,7 +20,7 @@ class Bureaucrat
         Bureaucrat();
         Bureaucrat(const std::string name, int grade);
         Bureaucrat(const Bureaucrat& bure);
-        void operator=(const Bureaucrat& bure);
+        Bureaucrat& operator=(const Bureaucrat& bure);
         ~Bureaucrat();
         std::string getName() const;
         int getGrade() const;

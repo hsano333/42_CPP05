@@ -59,9 +59,9 @@ bool Form::getSign(void) const
     return (this->sign);
 }
 
-void Form::beSigned(Bureaucrat* bure)
+void Form::beSigned(Bureaucrat& bure)
 {
-    if (bure->getGrade() > this->gradeForSign)
+    if (bure.getGrade() > this->gradeForSign)
         throw Bureaucrat::GradeTooLowException;
     this->sign = true;
 }

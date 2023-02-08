@@ -29,7 +29,7 @@ class Form
         int getGradeForSign() const;
         int getGradeForExecute() const;
         bool getSign() const;
-        void beSigned(Bureaucrat* bure);
+        void beSigned(Bureaucrat& bure);
 
         static TooHighException GradeTooHighException;
         static TooLowException GradeTooLowException;

@@ -80,11 +80,11 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& bure)
 }
 
 
-void Bureaucrat::signForm(Form &form)
+void Bureaucrat::signForm(AForm &form)
 {
     try
     {
-        form.beSigned(this);
+        form.execute(*this);
         cout << this->getName() << " signed " << form.getName() << endl;
     }
     catch(std::exception &e)
@@ -94,6 +94,4 @@ void Bureaucrat::signForm(Form &form)
              << " but your grade is " << this->getGrade() 
              << "." << endl;
     }
-
-
 }

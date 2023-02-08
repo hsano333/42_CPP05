@@ -1,6 +1,8 @@
 #ifndef ROBOTOMYREQUESTFORM_H
 #define ROBOTOMYREQUESTFORM_H
-class RobotomyRequestForm
+#include "AForm.hpp"
+
+class RobotomyRequestForm : public AForm
 {
     private:
     public:

@@ -6,8 +6,6 @@
 #include "GradeTooHighException.hpp"
 #include "GradeTooLowException.hpp"
 
-
-
 class Bureaucrat
 {
     private:

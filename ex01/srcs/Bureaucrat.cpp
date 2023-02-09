@@ -85,7 +85,6 @@ void Bureaucrat::signForm(Form &form)
 {
     try
     {
-        cout << "signForm:" << form.getSign() << endl;
         form.beSigned(*this);
         cout << this->getName() << " signed " << form.getName() << endl;
     }

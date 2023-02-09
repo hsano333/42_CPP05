@@ -51,19 +51,23 @@ EForm Intern::searchForm(std::string name)
 
 AForm* Intern::makeForm(std::string name, std::string target)
 {
+    AForm* form;
     switch(this->searchForm(name))
     {
         case SHRUBBERYCREATION:
-            cout << "Intern creates " << name << endl;
-            return (new ShrubberyCreationForm(target));
+            form = new ShrubberyCreationForm(target);
+            cout << "Intern creates [" << *form << "]" <<  endl;
+            return (form);
             break;
         case ROBOTOMYREQUEST:
-            cout << "Intern creates " << name << endl;
-            return (new RobotomyRequestForm(target));
+            form = new RobotomyRequestForm(target);
+            cout << "Intern creates [" << *form << "]" <<  endl;
+            return (form);
             break;
         case PRESIDENTIALPARDON:
-            cout << "Intern creates " << name << endl;
-            return (new PresidentialPardonForm(target));
+            form = new PresidentialPardonForm(target);
+            cout << "Intern creates [" << *form << "]" <<  endl;
+            return (form);
             break;
         default:
             cout << "Error:" << name << " is not exist in Form list." << endl;

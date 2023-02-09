@@ -110,11 +110,4 @@ void Bureaucrat::executeForm(AForm const &form) const
              << e.what()
              << "." << endl;
     }
-    //catch(TooLowException &e)
-    //{
-        //cout << this->getName() << " couldn't execute " << form.getName() << " because "
-             //<< "Form's grade for sign is " << form.getGradeForSign()
-             //<< " but your grade is " << this->getGrade() 
-             //<< "." << endl;
-    //}
 }

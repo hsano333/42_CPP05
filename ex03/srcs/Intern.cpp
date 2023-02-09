@@ -54,12 +54,15 @@ AForm* Intern::makeForm(std::string name, std::string target)
     switch(this->searchForm(name))
     {
         case SHRUBBERYCREATION:
+            cout << "Intern creates " << name << endl;
             return (new ShrubberyCreationForm(target));
             break;
         case ROBOTOMYREQUEST:
+            cout << "Intern creates " << name << endl;
             return (new RobotomyRequestForm(target));
             break;
         case PRESIDENTIALPARDON:
+            cout << "Intern creates " << name << endl;
             return (new PresidentialPardonForm(target));
             break;
         default:
